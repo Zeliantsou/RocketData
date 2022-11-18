@@ -25,6 +25,8 @@ class CompanyAdmin(admin.ModelAdmin):
         'name',
     )
 
+    list_filter = ('city__name',)
+
     @admin.display(description='shipper')
     def get_shipper_link(self, obj):
         if obj.shipper:
