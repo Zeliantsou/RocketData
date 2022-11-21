@@ -9,6 +9,5 @@ urlpatterns = [
     path(api_prefix, include('rest_framework.urls')),
     path(api_prefix, include('company.urls')),
     path(api_prefix, include('product.urls')),
-    path(api_prefix, include('reference.urls')),
     path(api_prefix, include('user.urls')),
 ]

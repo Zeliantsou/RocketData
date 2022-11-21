@@ -1,8 +1,9 @@
-from rest_framework.mixins import ListModelMixin, CreateModelMixin
-from rest_framework.permissions import AllowAny
+from rest_framework.mixins import CreateModelMixin
 from rest_framework.viewsets import GenericViewSet
 
 from django.contrib.auth.models import User
+
+from user.permissions import IsAnonymous
 from user.serializers import UserCreateSerializer
 
 
@@ -11,7 +12,7 @@ class UserViewSet(
     GenericViewSet,
 ):
     queryset = User.objects.all()
-    permission_classes = (AllowAny,)
+    permission_classes = (IsAnonymous,)
     serializer_classes = {
         'create': UserCreateSerializer,
     }

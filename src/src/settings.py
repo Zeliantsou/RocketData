@@ -106,15 +106,6 @@ CELERY_RESULT_SERIALIZER = 'json'
 
 SOURCE_EMAIL = os.environ.get('SOURCE_EMAIL')
 
-# AWS_ACCESS_KEY_ID = os.environ.get('RABBITMQ_HOST')
-# AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-# AWS_DEFAULT_REGION = os.environ.get('AWS_DEFAULT_REGION')
-# AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
-# AWS_S3_FILE_OVERWRITE = False
-# AWS_DEFAULT_ACL = None
-# DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-# ALLOWED_FILE_EXTENSIONS = ('jpeg', 'jpg', )
-
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticated',
