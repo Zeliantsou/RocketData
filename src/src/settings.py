@@ -24,6 +24,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+    'django_filters',
+
     'company',
     'product',
     'reference',
@@ -112,14 +115,13 @@ SOURCE_EMAIL = os.environ.get('SOURCE_EMAIL')
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # ALLOWED_FILE_EXTENSIONS = ('jpeg', 'jpg', )
 
-# REST_FRAMEWORK = {
-    # 'DEFAULT_AUTHENTICATION_CLASSES': (
-    #     'rest_framework.authentication.TokenAuthentication',
-    # ),
-    # 'DEFAULT_PERMISSION_CLASSES': (
-    #     'rest_framework.permissions.AllowAny',
-    # ),
-# }
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 LANGUAGE_CODE = 'en-us'
 
