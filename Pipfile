@@ -10,6 +10,9 @@ psycopg2-binary = "*"
 djangorestframework = "*"
 markdown = "*"
 django-filter = "*"
+django-rest-swagger = "*"
+drf-yasg-json-api = "*"
+celery = "*"
 
 [dev-packages]
 
