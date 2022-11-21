@@ -1,17 +1,21 @@
-from rest_framework.mixins import ListModelMixin
+from rest_framework.mixins import (
+    CreateModelMixin,
+    DestroyModelMixin
+)
 from rest_framework.viewsets import GenericViewSet
 
 from product.models import Product
-from product.serializers import ProductListSerializer
+from product.serializers import ProductCreateSerializer
 
 
 class ProductViewSet(
-    ListModelMixin,
+    CreateModelMixin,
+    DestroyModelMixin,
     GenericViewSet,
 ):
     queryset = Product.objects.all()
     serializer_classes = {
-        'list': ProductListSerializer,
+        'create': ProductCreateSerializer,
     }
 
     def get_serializer_class(self):

@@ -12,3 +12,21 @@ class CompanyListSerializer(serializers.ModelSerializer):
             'name',
             'email',
         )
+
+
+class CompanyCreateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Company
+        fields = (
+            'type',
+            'name',
+            'email',
+            'country',
+            'city',
+            'street',
+            'house_number',
+            'products',
+            'employees',
+            'shipper',
+        )
