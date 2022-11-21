@@ -30,3 +30,42 @@ class CompanyCreateSerializer(serializers.ModelSerializer):
             'employees',
             'shipper',
         )
+
+
+class CompanyRetrieveSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Company
+        fields = (
+            'id',
+            'type',
+            'name',
+            'email',
+            'country',
+            'city',
+            'street',
+            'house_number',
+            'products',
+            'employees',
+            'shipper',
+            'debt',
+            'created',
+        )
+
+
+class CompanyUpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Company
+        fields = (
+            'type',
+            'name',
+            'email',
+            'country',
+            'city',
+            'street',
+            'house_number',
+            'products',
+            'employees',
+            'shipper',
+        )

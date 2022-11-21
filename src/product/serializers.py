@@ -12,3 +12,26 @@ class ProductCreateSerializer(serializers.ModelSerializer):
             'type',
             'release_date',
         )
+
+
+class ProductRetrieveSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = (
+            'id',
+            'name',
+            'type',
+            'release_date',
+        )
+
+
+class ProductUpdateSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = (
+            'name',
+            'type',
+            'release_date',
+        )
