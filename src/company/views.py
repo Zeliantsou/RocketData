@@ -1,3 +1,4 @@
+from rest_framework.filters import SearchFilter
 from rest_framework.mixins import ListModelMixin
 from rest_framework.viewsets import GenericViewSet
 
@@ -10,6 +11,8 @@ class CompanyViewSet(
     GenericViewSet,
 ):
     queryset = Company.objects.all()
+    filter_backends = (SearchFilter,)
+    search_fields = ('country__name',)
     serializer_classes = {
         'list': CompanyListSerializer,
     }
