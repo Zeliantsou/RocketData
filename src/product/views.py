@@ -22,7 +22,6 @@ class ProductViewSet(
     GenericViewSet,
 ):
     queryset = Product.objects.all()
-    # serializer_class = ProductUpdateSerializer
     serializer_classes = {
         'create': ProductCreateSerializer,
         'update': ProductUpdateSerializer,

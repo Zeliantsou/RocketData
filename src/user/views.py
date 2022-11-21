@@ -1,17 +1,19 @@
-from rest_framework.mixins import ListModelMixin
+from rest_framework.mixins import ListModelMixin, CreateModelMixin
+from rest_framework.permissions import AllowAny
 from rest_framework.viewsets import GenericViewSet
 
 from django.contrib.auth.models import User
-from user.serializers import UserListSerializer
+from user.serializers import UserCreateSerializer
 
 
 class UserViewSet(
-    ListModelMixin,
+    CreateModelMixin,
     GenericViewSet,
 ):
     queryset = User.objects.all()
+    permission_classes = (AllowAny,)
     serializer_classes = {
-        'list': UserListSerializer,
+        'create': UserCreateSerializer,
     }
 
     def get_serializer_class(self):
