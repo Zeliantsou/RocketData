@@ -1,4 +1,5 @@
 from django.db.models import Avg
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter
 from rest_framework.mixins import ListModelMixin
@@ -14,8 +15,9 @@ class CompanyViewSet(
     GenericViewSet,
 ):
     queryset = Company.objects.all()
-    filter_backends = (SearchFilter,)
-    search_fields = ('country__name',)
+    filter_backends = (DjangoFilterBackend, SearchFilter)
+    search_fields = ('products__id',)
+    filterset_fields = ('country',)
     serializer_classes = {
         'list': CompanyListSerializer,
         'get_with_debt_more_avg': CompanyListSerializer,
