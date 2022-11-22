@@ -161,3 +161,4 @@ cython_debug/
 
 data/
 issues.txt
+data_fixtures.py

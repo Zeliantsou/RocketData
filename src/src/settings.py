@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django_filters',
     'rest_framework_swagger',
     'drf_yasg',
+    'django_extensions',
 
     'company',
     'product',
