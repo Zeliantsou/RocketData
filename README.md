@@ -9,6 +9,7 @@ and `docker-compose` [https://docs.docker.com/compose/compose-file/],
 
 ## Installation
 
+Please create `.env` file based on `.env.dist`
 You should run commands below to install application correctly:
 
         docker-compose up --build
